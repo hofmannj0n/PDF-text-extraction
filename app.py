@@ -5,8 +5,8 @@ import os
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 
-API_KEY = "79ab295c19394593829bfd22215cff98"
-ENDPOINT = "https://feather-form-recognizer.cognitiveservices.azure.com/"
+API_KEY = st.secrets["API_KEY"]
+ENDPOINT = st.secrets["ENDPOINT"]
 
 def extract_text_from_document(document_path):
     document_analysis = DocumentAnalysisClient(endpoint=ENDPOINT, credential=AzureKeyCredential(API_KEY))
